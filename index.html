@@ -47,6 +47,16 @@
     margin-bottom: 1.5rem;
     color: var(--text-color);
   }
+  
+  button.export-backup {
+    background-color: #d1d5db;  /* Light Grey */
+    color: #333;  /* Dark text for contrast */
+}
+
+button.export-backup:hover {
+  background-color: #9ca3af;  /* Slightly darker grey on hover */
+}
+
   h2 {
     font-weight: 600;
     font-size: 1.25rem;
@@ -340,6 +350,7 @@
 </style>
 <link rel="manifest" href="manifest.json" />
 <link rel="icon" type="image/png" sizes="32x32" href="img-192.png" />
+<button class="export-backup">⬇️ Export Backup</button>
 </head>
 <body>
 
@@ -471,13 +482,13 @@
     <button class="primary" onclick="generateReport()">📊 Generate Report</button>
   </section>
 
-  <!-- Backup & Restore -->
-  <section class="section backup-section" aria-label="Backup and Restore Data">
-    <h2>Backup & Restore Data</h2>
-    <button class="danger" onclick="clearAllData()">🗑️ Clear All Data</button>
-    <button onclick="exportData()">⬇️ Export Backup</button>
-    <input type="file" id="importFile" accept=".json" aria-label="Import backup file" onchange="importData(event)" />
-  </section>
+ <!-- Backup & Restore -->
+<section class="section backup-section" aria-label="Backup and Restore Data">
+  <h2>Backup & Restore Data</h2>
+  <button class="danger" onclick="clearAllData()">🗑️ Clear All Data</button>
+  <button class="export-backup" onclick="exportData()">⬇️ Export Backup</button>
+  <input type="file" id="importFile" accept=".json" aria-label="Import backup file" onchange="importData(event)" />
+</section>
 </div>
 
 <script>
